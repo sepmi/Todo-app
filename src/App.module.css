@@ -1,0 +1,20 @@
+.mainCard {
+  width: 45%;
+  padding: 15px;
+  margin: 50px auto;
+  background-color: #00000061;
+}
+
+@media screen and (max-width: 700px) {
+  .mainCard {
+    width: 90%;
+  }
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions button {
+  margin: 5px;
+}

@@ -1,0 +1,37 @@
+.list {
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.list ul {
+  margin: 5px 5px;
+  padding: 10px;
+}
+
+.list li {
+  list-style-type: none;
+  border: 0.5px solid black;
+  padding: 2px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.list li div {
+  width: 80%;
+  height: 25px;
+  display: inline-block;
+}
+
+.list li button {
+  position: absolute;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  right: 0;
+  top: 0;
+  border: none;
+  background-image: url("../../images/delete.svg");
+  background-repeat: no-repeat;
+}
