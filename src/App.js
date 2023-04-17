@@ -5,7 +5,6 @@ import Input from "./components/Input/Input";
 import ItemsList from "./components/items/ItemsList";
 import { parsed } from "./functions/functions.js";
 import itemsReducer from "./components/items/itemsReducer";
-import { clear } from "./functions/functions";
 
 function App() {
   const [items, itemsDispatch] = useReducer(itemsReducer, {
@@ -19,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const parsedArray = parsed("array");
-
+    console.log("jingili");
     if (parsedArray && parsedArray.length !== 0 && items.items.length === 0) {
       itemsDispatch({
         type: "ADD_OLD",
@@ -28,7 +27,6 @@ function App() {
   }, []);
 
   const clearBtnHandler = (e) => {
-    clear();
     itemsDispatch({ type: "CLEAR" });
   };
 

@@ -25,9 +25,8 @@ const itemsReducer = (state, action) => {
     };
   }
 
-  if (action.type === "CLEAR ") {
+  if (action.type === "CLEAR") {
     clear();
-
     return {
       items: [],
       counter: 0,

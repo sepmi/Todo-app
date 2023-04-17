@@ -16,6 +16,9 @@
   padding: 2px;
   margin-bottom: 10px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .list li div {
@@ -30,7 +33,6 @@
   width: 24px;
   height: 24px;
   right: 0;
-  top: 0;
   border: none;
   background-image: url("../../images/delete.svg");
   background-repeat: no-repeat;
