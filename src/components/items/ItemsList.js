@@ -1,5 +1,6 @@
 import Card from "../Card/Card";
 import classes from "./ItemsList.module.css";
+import EditInput from "../Input/EditInput";
 
 const ItemsList = (props) => {
   const deleteItemHandler = (e) => {
@@ -10,13 +11,21 @@ const ItemsList = (props) => {
     props.onEditItem(id);
   };
 
+  const saveItemHandler = (item) => {
+    props.onSaveItem(item);
+  };
+
   return (
     <Card className={classes.list}>
       <ul>
         {props.items.map((item) => {
           return (
             <li key={item.id}>
-              <div>{item.text}</div>
+              {!item.editEnable && <div>{item.text}</div>}
+              {item.editEnable && (
+                <EditInput item={item} onNewItemText={saveItemHandler} />
+              )}
+
               <button
                 className={classes.delete}
                 onClick={() => {
@@ -25,14 +34,16 @@ const ItemsList = (props) => {
               >
                 Delete
               </button>
-              {/* <button
-                className={classes.edit}
-                onClick={() => {
-                  editItemHandler(item.id);
-                }}
-              >
-                Edit
-              </button> */}
+              {!item.editEnable && (
+                <button
+                  className={classes.edit}
+                  onClick={() => {
+                    editItemHandler(item.id);
+                  }}
+                >
+                  Edit
+                </button>
+              )}
             </li>
           );
         })}
