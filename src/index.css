@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   background-color: rgb(247 247 249);
-  background-image: url(./images/b2.jpeg);
+  background-image: url(/src/images/b2.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }

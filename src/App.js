@@ -35,7 +35,11 @@ function App() {
   };
 
   const onEditItemHandler = (id) => {
-    itemsDispatch({ type: "EDIT_ITEM", id: id });
+    itemsDispatch({ type: "EDIT_ITEM_ON", id: id });
+  };
+
+  const onSaveItemHandler = (item) => {
+    itemsDispatch({ type: "SAVE_EDITED_ITEM", item: item });
   };
 
   return (
@@ -47,6 +51,7 @@ function App() {
             items={items.items}
             onDeleteItemId={onDeleteItemHandler}
             onEditItem={onEditItemHandler}
+            onSaveItem={onSaveItemHandler}
           />
         )}
         <div className={classes.actions}>

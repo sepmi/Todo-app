@@ -4,7 +4,7 @@ const itemsReducer = (state, action) => {
   if (action.type === "ADD_ONE") {
     const newArr = [
       ...state.items,
-      { text: action.newText, id: state.counter },
+      { text: action.newText, id: state.counter, editEnable: false },
     ];
     clear();
     save("array", newArr);
@@ -48,14 +48,37 @@ const itemsReducer = (state, action) => {
     };
   }
 
-  if (action.type === "EDIT_ITEM") {
+  if (action.type === "EDIT_ITEM_ON") {
     state.items.map((item) => {
       if (item.id === action.id) {
+        item.editEnable = true;
       }
     });
 
     return {
       items: state.items,
+      counter: state.counter,
+    };
+  }
+
+  if (action.type === "SAVE_EDITED_ITEM") {
+    const newArr = state.items.map((item) => {
+      if (item.id === action.item.id) {
+        item.editEnable = false;
+        item.text = action.item.text;
+      }
+      return {
+        text: item.text,
+        itemEnable: item.itemEnable,
+        id: item.id,
+      };
+    });
+
+    remove("array");
+    save("array", newArr);
+
+    return {
+      items: newArr,
       counter: state.counter,
     };
   }

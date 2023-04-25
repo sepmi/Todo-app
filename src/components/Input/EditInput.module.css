@@ -1,0 +1,17 @@
+.form {
+  order: 0;
+  flex: 88%;
+  display: flex;
+}
+
+.form input {
+  flex: 90%;
+  order: 0;
+  margin-right: 2px;
+}
+
+.save {
+  order: 1;
+  flex: 10%;
+  margin-right: 2px;
+}
