@@ -18,3 +18,18 @@
 .actions button {
   margin: 5px;
 }
+
+.main_logo {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: auto;
+}
+
+.logo {
+  background-image: url("./images/github.png");
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background-repeat: no-repeat;
+}

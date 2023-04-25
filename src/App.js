@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { Fragment, useEffect, useReducer } from "react";
 import Card from "./components/Card/Card";
 import classes from "./App.module.css";
 import Input from "./components/Input/Input";
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const parsedArray = parsed("array");
-    console.log("jingili");
+
     if (parsedArray && parsedArray.length !== 0 && items.items.length === 0) {
       itemsDispatch({
         type: "ADD_OLD",
@@ -34,18 +34,37 @@ function App() {
     itemsDispatch({ type: "DELETE_ONE", id: id });
   };
 
+  const onEditItemHandler = (id) => {
+    itemsDispatch({ type: "EDIT_ITEM", id: id });
+  };
+
   return (
-    <Card className={classes.mainCard}>
-      <Input onItem={newItemHandler} />
-      {items.items.length !== 0 && (
-        <ItemsList items={items.items} onDeleteItemId={onDeleteItemHandler} />
-      )}
-      <div className={classes.actions}>
+    <Fragment>
+      <Card className={classes.mainCard}>
+        <Input onItem={newItemHandler} />
         {items.items.length !== 0 && (
-          <button onClick={clearBtnHandler}>clear List</button>
+          <ItemsList
+            items={items.items}
+            onDeleteItemId={onDeleteItemHandler}
+            onEditItem={onEditItemHandler}
+          />
         )}
-      </div>
-    </Card>
+        <div className={classes.actions}>
+          {items.items.length !== 0 && (
+            <button onClick={clearBtnHandler}>clear List</button>
+          )}
+        </div>
+      </Card>
+
+      <a
+        href="https://github.com/sepmi/Todo-app"
+        target="_blank"
+        rel="noreferrer"
+        className={classes.main_logo}
+      >
+        <div className={classes.logo}></div>
+      </a>
+    </Fragment>
   );
 }
 

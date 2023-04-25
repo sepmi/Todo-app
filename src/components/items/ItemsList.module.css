@@ -13,27 +13,28 @@
 .list li {
   list-style-type: none;
   border: 0.5px solid black;
-  padding: 2px;
+  padding: 5px;
   margin-bottom: 10px;
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .list li div {
-  width: 80%;
-  height: 25px;
-  display: inline-block;
+  order: 0;
+  flex: 80%;
 }
 
-.list li button {
-  position: absolute;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  right: 0;
-  border: none;
-  background-image: url("../../images/delete.svg");
-  background-repeat: no-repeat;
+.delete {
+  order: 2;
+  flex: 10%;
+}
+
+.edit {
+  order: 1;
+  flex: 10%;
+  margin-right: 2px;
 }

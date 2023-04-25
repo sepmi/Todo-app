@@ -48,6 +48,18 @@ const itemsReducer = (state, action) => {
     };
   }
 
+  if (action.type === "EDIT_ITEM") {
+    state.items.map((item) => {
+      if (item.id === action.id) {
+      }
+    });
+
+    return {
+      items: state.items,
+      counter: state.counter,
+    };
+  }
+
   return { items: [], counter: 0 };
 };
 

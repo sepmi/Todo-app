@@ -5,6 +5,11 @@ const ItemsList = (props) => {
   const deleteItemHandler = (e) => {
     props.onDeleteItemId(e);
   };
+
+  const editItemHandler = (id) => {
+    props.onEditItem(id);
+  };
+
   return (
     <Card className={classes.list}>
       <ul>
@@ -13,10 +18,21 @@ const ItemsList = (props) => {
             <li key={item.id}>
               <div>{item.text}</div>
               <button
+                className={classes.delete}
                 onClick={() => {
                   deleteItemHandler(item.id);
                 }}
-              ></button>
+              >
+                Delete
+              </button>
+              {/* <button
+                className={classes.edit}
+                onClick={() => {
+                  editItemHandler(item.id);
+                }}
+              >
+                Edit
+              </button> */}
             </li>
           );
         })}
