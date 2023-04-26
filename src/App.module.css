@@ -5,9 +5,15 @@
   background-color: #00000061;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .mainCard {
-    width: 90%;
+    min-width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainCard {
+    min-width: 95%;
   }
 }
 

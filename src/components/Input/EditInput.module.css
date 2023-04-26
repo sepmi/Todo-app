@@ -1,17 +1,32 @@
-.form {
+/* .form {
   order: 0;
-  flex: 88%;
+  flex: 90%;
   display: flex;
 }
 
 .form input {
-  flex: 90%;
+  flex: 70%;
   order: 0;
   margin-right: 2px;
 }
 
 .save {
   order: 1;
+  flex: 10%;
+  margin-right: 2px;
+} */
+
+.form {
+  display: inline-flex;
+  flex: 80%;
+}
+
+.form input {
+  flex: 70%;
+  margin-right: 2px;
+}
+
+.save {
   flex: 10%;
   margin-right: 2px;
 }
