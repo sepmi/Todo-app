@@ -15,3 +15,20 @@
   flex: 10%;
   margin-right: 2px;
 }
+
+@media screen and (max-width: 800px) {
+  .form {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 2px;
+  }
+
+  .form input {
+    margin-right: 0px;
+    margin-bottom: 2px;
+  }
+
+  .save {
+    margin-right: 0px;
+  }
+}
