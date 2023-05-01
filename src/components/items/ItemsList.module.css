@@ -37,4 +37,17 @@
   order: 1;
   flex: 10%;
   margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 800px) {
+  .list li {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit {
+    margin-right: 0px;
+  }
 }
